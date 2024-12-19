@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Sales Chart Data</title>
+
+    <!-- link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="barChart" width="900px"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        const barChart = document.getElementById("barChart");
+
+        new Chart(barChart, {
+            type: "bar",
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                datasets: [
+                    {
+                        data: [100, 150, 170, 187, 300, 442, 600, 800, 790, 820, 950, 1000],
+                        label: "Nissan",
+                        backgroundColor: "rgba(186, 85, 211, 0.7)",
+                        borderColor: "#3cba9f",
+                        borderWidth: 1
+                    },
+                    {
+                        data: [500, 700, 900, 850, 890, 922, 950, 800, 990, 900, 950, 1100],
+                        label: "Toyota",
+                        backgroundColor: "rgba(80, 200, 120, 0.7)",
+                        borderColor: "#50C878",
+                        borderWidth: 1
+                    },
+                    {
+                        data: [700, 750, 530, 600, 625, 600, 800, 900, 890, 820, 1000, 1100],
+                        label: "Honda",
+                        backgroundColor: "rgba(252, 3, 78, 0.7)",
+                        borderColor: "#fc034e",
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Car Sales Data Chart 2024'
+                    }
+                },
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <footer>
+        © 2024 Sugeng SUKSES. All rights reserved.
+    </footer>
+</body>
+</html>
